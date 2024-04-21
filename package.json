@@ -1,0 +1,43 @@
+{
+  "name": "sleep_stats",
+  "version": "1.0.0",
+  "description": "API for UOT final project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start:prod": "SET NODE_ENV=production&nodemon server.js",
+    "debug": "ndb server.js",
+    "start:prod2": "SET NODE_ENV=production&ndb server.js"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.17.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.8.1",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.0.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.4",
+    "prettier": "^3.0.0",
+    "sharp": "^0.33.3",
+    "uuidv4": "^6.2.13",
+    "validator": "^13.9.0",
+    "xss-clean": "^0.1.4"
+  },
+  "author": "SajadAli",
+  "license": "ISC"
+}

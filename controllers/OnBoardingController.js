@@ -1,7 +1,7 @@
 const catchAsync = require("express-async-handler");
 
 const OnBoarding = require("../models/OnBoardingModel");
-const { uuid } = require("uuidv4");
+const { v4 } = require("uuid");
 const sharp = require("sharp");
 
 const uploadImages = require("../middlewares/uploadImageMiddleware");
@@ -9,13 +9,11 @@ const uploadImages = require("../middlewares/uploadImageMiddleware");
 exports.uploadOnBoardingImage = uploadImages.uploadOneImage("image");
 
 exports.resizeImages = catchAsync(async (req, res, next) => {
-  const filename = `Boarding-${uuid()}-${Date.now()}.jpeg`;
-
+  const filename = `Boarding-${v4()}-${Date.now()}.jpeg`;
 
   await sharp(req.file.buffer)
-    .resize(500, 500)
     .toFormat("jpeg")
-    .jpeg({ quality: 90 })
+    .jpeg({ quality: 100 })
     .toFile(`images/onBoarding/${filename}`);
 
   req.body.image = filename;

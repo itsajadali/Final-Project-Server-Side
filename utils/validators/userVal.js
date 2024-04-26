@@ -10,7 +10,7 @@ exports.idValidator = [
 
 exports.signupValidator = [
   check("name").notEmpty().withMessage("name is required"),
-  check("email")
+  check("email").notEmpty().withMessage("email is required")
     .isEmail()
     .withMessage("invalid email")
     .custom(async (value) => {

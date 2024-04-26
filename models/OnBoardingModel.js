@@ -18,7 +18,7 @@ const onBoardingSchema = new mongoose.Schema({
 const modifyingImag = (doc) => {
   if (!doc.image) return;
 
-  doc.image = `${process.env.BASE_URL}/onBoarding/${doc.image}`;
+  doc.image = `http://${process.env.BASE_URL}/onBoarding/${doc.image}`;
   return doc;
 };
 

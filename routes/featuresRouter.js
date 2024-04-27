@@ -8,7 +8,8 @@ const router = express.Router({ mergeParams: true });
 
 // /user/features
 
-router.route("/").get(featureController.getAllFeatures);
+
+
 router
   .route("/createfeature")
   .post(
@@ -16,5 +17,13 @@ router
     authController.protects,
     featureController.createFeatures
   );
+
+
+router.use("/:userId", featureController.getAllFeatures);
+
+router.route("/").get(featureController.getAllFeatures);
+
+
+
 
 module.exports = router;

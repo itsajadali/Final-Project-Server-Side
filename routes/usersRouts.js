@@ -7,7 +7,6 @@ const featuresRouter = require("./featuresRouter");
 const router = express.Router();
 const userValidator = require("../utils/validators/userVal");
 
-router.use("/:userId/features", featuresRouter);
 
 router
   .route("/signup")

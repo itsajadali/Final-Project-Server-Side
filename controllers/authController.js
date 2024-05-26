@@ -165,6 +165,7 @@ exports.verifyResetCode = catchAsync(async (req, res, next) => {
     .createHash("sha256")
     .update(req.body.resetCode)
     .digest("hex");
+  verifyResetCode;
 
   const user = await User.findOne({
     passwordResetToken: hashedToken,

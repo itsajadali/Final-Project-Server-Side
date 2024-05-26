@@ -4,6 +4,7 @@ const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
+const cors = require("cors");
 const hpp = require("hpp");
 
 const usersRouter = require("./routes/usersRouts");
@@ -14,6 +15,8 @@ const AppError = require("./utils/appError");
 const globalErrorHandler = require("./controllers/errorController");
 
 const app = express();
+
+app.use(cors({ origin: "*" }));
 
 app.use(helmet());
 
